@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ajak Date via WhatsApp</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ffd6e8, #ff9aac);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    color: #5a2140;
+    overflow: hidden;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    animation: fadeInDown 1s ease forwards;
+  }
+
+  form {
+    background: #fff0f6;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 14px 30px rgba(255, 122, 177, 0.3);
+    animation: fadeInUp 1s ease forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 320px;
+  }
+
+  label {
+    background: #ff8db9;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    background: #d6336c;
+    box-shadow: 0 0 10px #d6336c;
+  }
+
+  input[type="submit"] {
+    background: #d6336c;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 0 15px #d6336c;
+    transition: background-color 0.3s;
+  }
+
+  input[type="submit"]:hover {
+    background: #ff4d87;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+  <h2>AYOKK BESOKK MAEN PS HEHEHE</h2>
+  <form id="dateForm">
+    <input type="radio" id="ya" name="jawaban" value="Ya" required />
+    <label for="ya">Ya</label>
+    <input type="radio" id="tidak" name="jawaban" value="Tidak" required />
+    <label for="tidak">Tidak</label>
+    <input type="submit" value="Kirim Jawaban" />
+  </form>
+
+  <script>
+    document.getElementById('dateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const jawaban = document.querySelector('input[name="jawaban"]:checked').value;
+      const nomorWhatsApp = '6281234567890';  // Ganti dengan nomor WhatsApp tujuan (format internasional tanpa tanda +)
+      const pesan = `Hai, aku jawab undangan jalan bareng kamu: ${jawaban}. Yuk atur waktunya!`;
+      const url = `https://wa.me/${6281331195463}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
